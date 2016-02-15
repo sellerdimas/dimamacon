@@ -59,3 +59,18 @@ Template.modal4.events({
         $("body,html").animate({scrollTop: minus }, 800);
     }
 });
+
+
+
+
+Template.main.onRendered(function () {
+    
+  $( '.modalPhoto img' ).click(
+        function() {
+            var imgSrc = $(this).attr('src');
+            $('#mainImg').attr('src', imgSrc);
+
+        
+        });
+
+    });
