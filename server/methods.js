@@ -88,14 +88,14 @@ Meteor.setInterval(function () {
 
 
 Meteor.publish('preload',function () {
-  return Preload.find();
+  return NewCollections.find();
   
 });
 
 
 
 
-Meteor.startup(function() {
+/*Meteor.startup(function() {
   if(!Preload.findOne()){
     for(var i = 1; i < 10; i++){
         Preload.insert({
@@ -104,4 +104,4 @@ Meteor.startup(function() {
     }
   }                                                                                                                                                                                                                                                                                   
 
-});
+});*/

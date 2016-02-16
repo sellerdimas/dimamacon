@@ -30,40 +30,24 @@ Template.main.onRendered(function () {
         }
     );
   $('.tovarBlock').click(function (e) {
+        var tovarId = $(this).attr('name');
 
-        var tovarHeader = this.childNodes[3].childNodes[1].innerText;
+        /*var tovarHeader = this.childNodes[3].childNodes[1].innerText;
         var firma = this.childNodes[3].childNodes[3].innerText;
         var akcii = this.childNodes[3].childNodes[5].childNodes[1].innerText;
         var price = this.childNodes[3].childNodes[5].childNodes[3].innerText;
-        var imgSrc = this.childNodes[1].childNodes[1].getAttribute('src');
-        Session.set('tovarHeader', tovarHeader);
-        Session.set('firma', firma);
+        var imgSrc = this.childNodes[1].childNodes[1].getAttribute('src');*/
+        Session.set('tovarId', tovarId);
+      /*  Session.set('firma', firma);
         Session.set('akcii', akcii);
         Session.set('price', price);
-        Session.set('imgSrc', imgSrc);
+        Session.set('imgSrc', imgSrc);*/
         $('#modal1').openModal();
 
     })
 
        
 });
-Template.modal1.helpers({
-    modalHelper: function(){
-        var word = Session.get('imgSrc');
-        var wordFirst = Session.get('imgSrc')[0];
-        if(wordFirst === 'H'){
-            word = word.slice(1);
-        }
-        return {
-            tovarHeader: Session.get('tovarHeader'),
-            firma: Session.get('firma'),
-            akcii: Session.get('akcii'),
-            price: Session.get('price'),
-            imgSrc: word
 
-        }
-    }
-    
-  });
 
 
